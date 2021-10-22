@@ -24,10 +24,10 @@ RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-di
     mysqli \
     intl bcmath ctype curl dom hash simplexml sockets
 
-COPY ./libs/composer-setup.php ./
-RUN php composer-setup.php
-RUN php -r "unlink('composer-setup.php');"
-RUN mv composer.phar /usr/local/bin/composer
+#COPY ./libs/composer-setup.php ./
+#RUN php composer-setup.php
+#RUN php -r "unlink('composer-setup.php');"
+#RUN mv composer.phar /usr/local/bin/composer
 
 ARG WORKDIR
 WORKDIR $WORKDIR  
